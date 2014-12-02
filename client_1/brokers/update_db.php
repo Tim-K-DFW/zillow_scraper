@@ -1,6 +1,6 @@
 #!/usr/local/bin/php -q
 <?php
-require("/home/nhtven1/non-descript.net/includes/functions.php");
+require("../includes/functions.php");
 
 
 function shorten($long) {
@@ -232,6 +232,6 @@ rename($path . "dump.txt", $filename);
 $filename = $path . "states" . date('Y-m-d') . ".txt";			
 rename($path . "states.txt", $filename);
 
-require "/home/nhtven1/non-descript.net/client_1/brokers/update_retention.php";
+require "update_retention.php";
 
 ?>
