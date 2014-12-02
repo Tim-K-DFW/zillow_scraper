@@ -111,7 +111,7 @@ date_default_timezone_set('America/New_York');
 // $date = date('Y-m-d H:i:s');
 $batch = time();
 
-$path = "/home/nhtven1/non-descript.net/client_1/brokers/";			// because cron job is run from root directory
+$path = "...";			// because cron job is run from root directory
 $fp = fopen($path . "dump.txt", "w");
 $fp_state = fopen($path . "states.txt", "w");
 
@@ -204,9 +204,9 @@ echo "Time expended: " . (time() - $batch) . " sec.\n";
 // copy data from dump files into database
 $sql = "SELECT count(state) FROM results_by_state"; // needed for the script to run after query
 
-$sql .= ";LOAD DATA LOCAL INFILE '/home/nhtven1/non-descript.net/client_1/brokers/dump.txt' REPLACE INTO TABLE main FIELDS TERMINATED BY ';' LINES TERMINATED BY '\\n' (batch, time, hood, state, level, name, scope_page, total_in_scope, state_plus_name)";
+$sql .= ";LOAD DATA LOCAL INFILE '.../brokers/dump.txt' REPLACE INTO TABLE main FIELDS TERMINATED BY ';' LINES TERMINATED BY '\\n' (batch, time, hood, state, level, name, scope_page, total_in_scope, state_plus_name)";
 
-$sql .= ";LOAD DATA LOCAL INFILE '/home/nhtven1/non-descript.net/client_1/brokers/states.txt' REPLACE INTO TABLE states FIELDS TERMINATED BY ';' LINES TERMINATED BY '\\n' (batch, state, total)";
+$sql .= ";LOAD DATA LOCAL INFILE '.../brokers/states.txt' REPLACE INTO TABLE states FIELDS TERMINATED BY ';' LINES TERMINATED BY '\\n' (batch, state, total)";
 
 // aggregate premier agents by state
 $sql .= ";INSERT results_by_state (batch, state, premier_agents) SELECT batch, state, COUNT(name) FROM main WHERE batch = ? GROUP BY batch, state";

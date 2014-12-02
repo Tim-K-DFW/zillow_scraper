@@ -171,17 +171,8 @@
 	
 	// update table
 	
-	// this one removes quotation marks from "US total" -- but I kept them for viewing convenience
-	/* $a = query ('real_estate_z2', "SELECT count(state) FROM results_by_state; LOAD DATA LOCAL INFILE '/home/nhtven1/non-descript.net/client_1/brokers/ret_table.txt' REPLACE INTO TABLE retention FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n' (state, premier_agents, all_agents, premier_share, ave_length, cancelled_l_week, cancelled_l_month, cancelled_3_months, cancelled_6_months); update retention set date = now() + interval 3 hour where date = 0; UPDATE retention SET state = TRIM(BOTH '\"' FROM state)");   */
-	
-	/* $a = query ('real_estate_z2', "SELECT count(state) FROM results_by_state; 
-	LOAD DATA LOCAL INFILE '/home/nhtven1/non-descript.net/client_1/brokers/ret_table.txt' IGNORE INTO TABLE retention FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n' (state, premier_agents, all_agents, premier_share, ave_length, cancelled_l_week, cancelled_l_month, cancelled_3_months, cancelled_6_months); 
-	UPDATE retention SET date = now() + interval 3 hour WHERE date = 0;
-	DELETE FROM retention_backup; 
-	INSERT retention_backup SELECT * FROM retention"); */
-	
 	$a = query ('real_estate_z2', "SELECT count(state) FROM results_by_state; 
-	LOAD DATA LOCAL INFILE '/home/nhtven1/non-descript.net/client_1/brokers/ret_table.txt' IGNORE INTO TABLE retention FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n' (state, premier_agents, all_agents, premier_share, ave_length, cancelled_l_week, cancelled_l_month, cancelled_3_months, cancelled_6_months); 
+	LOAD DATA LOCAL INFILE '.../brokers/ret_table.txt' IGNORE INTO TABLE retention FIELDS TERMINATED BY ',' LINES TERMINATED BY '\\n' (state, premier_agents, all_agents, premier_share, ave_length, cancelled_l_week, cancelled_l_month, cancelled_3_months, cancelled_6_months); 
 	UPDATE retention SET date = now() + interval 3 hour WHERE date = 0");
 	
 	echo "Retention table in DB updated!\n";
