@@ -1,0 +1,60 @@
+ body {
+	font-family:Arial, Helvetica, sans-serif;
+	text-align: center;
+ }
+
+ #links {
+	width: 550px;
+	left: 50%;
+	margin-left: -275px;
+	top: 70%;
+	position: fixed;
+	text-align: left;
+	/* margin-top: 0px; */
+	/* margin-left: 0px; */
+
+ }
+ 
+#construction {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -331px;
+  margin-left: -275px;
+}
+
+h2 {
+	font-size:150%;
+}
+
+#as_of {
+	font-size:110%;
+	position: relative;
+	top: 70px;
+}
+
+#update_button {
+	position: relative;
+	font-size:18px;
+	top: 120px;
+	width: 160px;
+	height: 50px;
+}
+
+#download_button {
+	position: relative;
+	font-size:20px;
+	top: 200px;
+	width: 200px;
+	height: 70px;
+}
+
+#bottom {
+	position: relative;
+	top: 350px;
+}
+
+#download_link {
+	position: relative;
+	top: 220px;
+}
