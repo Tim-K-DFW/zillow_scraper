@@ -1,6 +1,6 @@
 zillow_scraper
 ==============
-Final project for the online computer science class (Harvard's CS50x) in April 2014.
+Final project for the online computer science class (Harvard's CS50x) in April 2014, the first programming class I took.
 
 The general infrastructure (page rendering and MySQL integration) is not mine, it was adopted from one of the CS50x projects. The core scraping, parsing and MySQL processing functionality (my bread and butter) is in `client_1/brokers/`. Workflow for weekly cron job is `update_db`, then `update_retention`; `download` is user-driven whenever he wants to download updated results. 
 
